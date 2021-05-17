@@ -132,6 +132,35 @@ App = {
         var themeIcon = document.getElementById("themeIcon");
         const currentTheme = window.localStorage.getItem('theme');
         if (currentTheme == 'light') {
+            document.documentElement.style.webkitFilter = 'invert(100) hue-rotate( 180deg )';
+            document.documentElement.style.filter = 'invert(100) hue-rotate( 180deg )';
+            document.documentElement.style.isolation = 'isolate';
+            imgList = document.getElementsByTagName('img');
+            for (let i = 0; i < imgList.length; i++) {
+                imgList[i].style.webkitFilter = 'invert(100) hue-rotate( 180deg )';
+                imgList[i].style.filter = 'invert(100) hue-rotate( 180deg )';
+                imgList[i].style.isolation = 'isolate';
+            }
+            document.getElementsByClassName('card-bg')[0].style.webkitFilter = 'invert(100) hue-rotate( 180deg )';
+            document.getElementsByClassName('card-bg')[0].filter = 'invert(100) hue-rotate( 180deg )';
+            document.getElementsByClassName('card-bg')[0].isolation = 'isolate';
+            window.localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.style.webkitFilter = '';
+            document.documentElement.style.filter = '';
+            document.documentElement.style.isolation = '';
+            imgList = document.getElementsByTagName('img');
+            for (let i = 0; i < imgList.length; i++) {
+                imgList[i].style.webkitFilter = '';
+                imgList[i].style.filter = '';
+                imgList[i].style.isolation = '';
+            }
+            document.getElementsByClassName('card-bg')[0].style.webkitFilter = '';
+            document.getElementsByClassName('card-bg')[0].filter = '';
+            document.getElementsByClassName('card-bg')[0].isolation = '';
+            window.localStorage.setItem('theme', 'light');
+        }
+        /*if (currentTheme == 'light') {
             document.getElementsByTagName('html')[0].classList.add('theme-dark');
             themeIcon.classList.remove('Card-moon');
             themeIcon.classList.add('Card-sun');
@@ -141,7 +170,7 @@ App = {
             themeIcon.classList.remove('Card-sun');
             themeIcon.classList.add('Card-moon');
             window.localStorage.setItem('theme', 'light');
-        }
+        }*/
         //location.reload();
     }
 }
