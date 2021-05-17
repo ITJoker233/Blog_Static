@@ -144,7 +144,7 @@ App = {
             document.getElementsByClassName('card-bg')[0].style.webkitFilter = 'invert(100) hue-rotate( 180deg )';
             document.getElementsByClassName('card-bg')[0].filter = 'invert(100) hue-rotate( 180deg )';
             document.getElementsByClassName('card-bg')[0].isolation = 'isolate';
-            hemeIcon.classList.remove('Card-moon');
+            themeIcon.classList.remove('Card-moon');
             themeIcon.classList.add('Card-sun');
             window.localStorage.setItem('theme', 'dark');
         } else {
