@@ -144,6 +144,8 @@ App = {
             document.getElementsByClassName('card-bg')[0].style.webkitFilter = 'invert(100) hue-rotate( 180deg )';
             document.getElementsByClassName('card-bg')[0].filter = 'invert(100) hue-rotate( 180deg )';
             document.getElementsByClassName('card-bg')[0].isolation = 'isolate';
+            hemeIcon.classList.remove('Card-moon');
+            themeIcon.classList.add('Card-sun');
             window.localStorage.setItem('theme', 'dark');
         } else {
             document.documentElement.style.webkitFilter = '';
@@ -158,6 +160,8 @@ App = {
             document.getElementsByClassName('card-bg')[0].style.webkitFilter = '';
             document.getElementsByClassName('card-bg')[0].filter = '';
             document.getElementsByClassName('card-bg')[0].isolation = '';
+            themeIcon.classList.remove('Card-sun');
+            themeIcon.classList.add('Card-moon');
             window.localStorage.setItem('theme', 'light');
         }
         /*if (currentTheme == 'light') {
