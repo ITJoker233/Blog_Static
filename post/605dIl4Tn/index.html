@@ -21,7 +21,7 @@
 <meta name="keywords" content="ITJoker,Blog,ITJoker&#39;sBlog,Peerless">
 <meta name="gridea-theme" content="Card">
 <meta name="spider" content="https://nmsl.sbjxw.网址">
-<meta name="UpdateTime" content="1621427155276">
+<meta name="UpdateTime" content="1621430078024">
 <script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io/CDN/js/jquery@3.4.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -44,15 +44,28 @@
 <script>
     $().ready(
         function() {
+            if (window.localStorage.getItem('first_visit') != 1) {
+                window.localStorage.setItem('theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                window.localStorage.setItem('first_visit', 1);
+            }
             var themeIcon = document.getElementById("themeIcon");
             var currentTheme = window.localStorage.getItem('theme');
             if (currentTheme == 'dark') {
-                document.getElementsByTagName('html')[0].classList.add('theme-dark');
-                document.getElementsByTagName('html')[0].removeAttribute('id');
+                imgList = document.getElementsByTagName('img');
+                for (let i = 0; i < imgList.length; i++) {
+                    imgList[i].style.cssText = mediaCssText;
+                }
+                document.documentElement.style.cssText = cssText;
+                document.getElementsByClassName('card-bg')[0].style.cssText = mediaCssText;
                 themeIcon.classList.remove('Card-moon');
                 themeIcon.classList.add('Card-sun');
             } else {
-                document.getElementsByTagName('html')[0].classList.remove('theme-dark');
+                imgList = document.getElementsByTagName('img');
+                for (let i = 0; i < imgList.length; i++) {
+                    imgList[i].style.cssText = '';
+                }
+                document.documentElement.style.cssText = '';
+                document.getElementsByClassName('card-bg')[0].style.cssText = '';
                 document.getElementsByTagName('html')[0].setAttribute('id', 'bg');
                 themeIcon.classList.remove('Card-sun');
                 themeIcon.classList.add('Card-moon');
@@ -224,13 +237,13 @@
                     
             </ul>
         </nav>
-        <form id="gridea-search-form" class="searchform" data-update="1621427155276" action="/search/index.html">
+        <form id="gridea-search-form" class="searchform" data-update="1621430078024" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
     </div>
     <div id="mobile-menu">
-        <form id="gridea-search-form" class="mobile-searchform" data-update="1621427155276" action="/search/index.html">
+        <form id="gridea-search-form" class="mobile-searchform" data-update="1621430078024" action="/search/index.html">
             <i class="Card Card-search"></i>
             <input id="s" class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
         </form>
@@ -324,7 +337,7 @@
                                                             <span class="post-edit"></span></div>
                                         </div>
                                         <div class="post-relative">
-                                            <img alt="💤ITJoker" src="https://blog.itjoker.cn/images/avatar.png?v=1621427155276" srcset="https://blog.itjoker.cn/images/avatar.png?v=1621427155276" class="avatar avatar-100 photo" width="100" height="100">
+                                            <img alt="💤ITJoker" src="https://blog.itjoker.cn/images/avatar.png?v=1621430078024" srcset="https://blog.itjoker.cn/images/avatar.png?v=1621430078024" class="avatar avatar-100 photo" width="100" height="100">
                                             <span class="post-type-author"><a href="https://blog.itjoker.cn" title="由💤ITJoker发布" rel="author">💤ITJoker<i class="Card Card-certify"></i></a></span>
                                             <span class="post-publish"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;2020-01-03</span>
                                         </div>
@@ -384,24 +397,24 @@
 </ul>
 <h2 id="未来计划">📜未来计划</h2>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8467380"><label class="task-list-item-label" for="task-item-8467380"> 增加live2d</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2762105"><label class="task-list-item-label" for="task-item-2762105"> 增加音乐插件</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8674168"><label class="task-list-item-label" for="task-item-8674168"> 增加搜索功能</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5641765"><label class="task-list-item-label" for="task-item-5641765"> 增加备案信息</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5039210"><label class="task-list-item-label" for="task-item-5039210"> 增加天气插件</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3181976"><label class="task-list-item-label" for="task-item-3181976"> 增加访问量功能</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2076544"><label class="task-list-item-label" for="task-item-2076544"> 增加文章分享功能</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9364270"><label class="task-list-item-label" for="task-item-9364270"> 增加文章打赏功能</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8655266"><label class="task-list-item-label" for="task-item-8655266"> 增加目录功能</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7984684"><label class="task-list-item-label" for="task-item-7984684"> 增加鼠标点击特效</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3942632"><label class="task-list-item-label" for="task-item-3942632"> 增加网页标题的特效</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9998891"><label class="task-list-item-label" for="task-item-9998891"> 增加主题字体自定义的功能</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1616438"><label class="task-list-item-label" for="task-item-1616438"> 增加了Valine评论的功能</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7741825"><label class="task-list-item-label" for="task-item-7741825"> 增加文章加密解密功能? ヾ(•ω•`)o (待定) (本功能需要客户端支持)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9079234"><label class="task-list-item-label" for="task-item-9079234"> 增加关于我的页面? ヾ(•ω•`)o (待定)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6202829"><label class="task-list-item-label" for="task-item-6202829"> 增加节日插件? ヾ(•ω•`)o (待定)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8896935"><label class="task-list-item-label" for="task-item-8896935"> 支持手机端的暗黑模式？ヾ(•ω•`)o ( 待定 2020.04.23)</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3046918"><label class="task-list-item-label" for="task-item-3046918"> 增加相关的Web特效~</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2525246"><label class="task-list-item-label" for="task-item-2525246"> 增加live2d</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9092866"><label class="task-list-item-label" for="task-item-9092866"> 增加音乐插件</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4810272"><label class="task-list-item-label" for="task-item-4810272"> 增加搜索功能</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-336367"><label class="task-list-item-label" for="task-item-336367"> 增加备案信息</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6239852"><label class="task-list-item-label" for="task-item-6239852"> 增加天气插件</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7018270"><label class="task-list-item-label" for="task-item-7018270"> 增加访问量功能</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2580851"><label class="task-list-item-label" for="task-item-2580851"> 增加文章分享功能</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7092490"><label class="task-list-item-label" for="task-item-7092490"> 增加文章打赏功能</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-563943"><label class="task-list-item-label" for="task-item-563943"> 增加目录功能</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2870199"><label class="task-list-item-label" for="task-item-2870199"> 增加鼠标点击特效</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7287076"><label class="task-list-item-label" for="task-item-7287076"> 增加网页标题的特效</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6822849"><label class="task-list-item-label" for="task-item-6822849"> 增加主题字体自定义的功能</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2339785"><label class="task-list-item-label" for="task-item-2339785"> 增加了Valine评论的功能</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1411976"><label class="task-list-item-label" for="task-item-1411976"> 增加文章加密解密功能? ヾ(•ω•`)o (待定) (本功能需要客户端支持)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7685164"><label class="task-list-item-label" for="task-item-7685164"> 增加关于我的页面? ヾ(•ω•`)o (待定)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1744304"><label class="task-list-item-label" for="task-item-1744304"> 增加节日插件? ヾ(•ω•`)o (待定)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6182715"><label class="task-list-item-label" for="task-item-6182715"> 支持手机端的暗黑模式？ヾ(•ω•`)o ( 待定 2020.04.23)</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3790114"><label class="task-list-item-label" for="task-item-3790114"> 增加相关的Web特效~</label></li>
 <li>More...</li>
 </ul>
 <h2 id="当前版本175">📌当前版本：1.7.5</h2>
@@ -573,8 +586,8 @@ git pull origin master
     <i class="post-share"></i>
     <span>&#x5206;&#x4EAB;:</span>
                 <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://blog.itjoker.cn/post/605dIl4Tn/"><i class="fa fa-qrcode"></i></a>
-                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.itjoker.cn/post/605dIl4Tn/&sharesource=qzone&title=关于Gridea-theme-Chic主题的Doc&pics=https://blog.itjoker.cn/images/avatar.png?v=1621427155276&summary="><i class="fa fa-qq"></i></a>
-                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://blog.itjoker.cn/post/605dIl4Tn/&sharesource=weibo&title=关于Gridea-theme-Chic主题的Doc + " - " + &pic="https://blog.itjoker.cn/images/avatar.png?v=1621427155276"><i class="fa fa-weibo "></i></a>
+                <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.itjoker.cn/post/605dIl4Tn/&sharesource=qzone&title=关于Gridea-theme-Chic主题的Doc&pics=https://blog.itjoker.cn/images/avatar.png?v=1621430078024&summary="><i class="fa fa-qq"></i></a>
+                <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://blog.itjoker.cn/post/605dIl4Tn/&sharesource=weibo&title=关于Gridea-theme-Chic主题的Doc + " - " + &pic="https://blog.itjoker.cn/images/avatar.png?v=1621430078024"><i class="fa fa-weibo "></i></a>
                 </span>
                 
                                             
@@ -955,25 +968,6 @@ App.recallMemory();
         
         var themeIcon = document.getElementById("themeIcon");
         const currentTheme = window.localStorage.getItem('theme');
-        if (currentTheme == 'dark') {
-            themeIcon.classList.remove('Card-moon');
-            themeIcon.classList.add('Card-sun');
-            imgList = document.getElementsByTagName('img');
-            for (let i = 0; i < imgList.length; i++) {
-                imgList[i].style.cssText = mediaCssText;
-            }
-            document.documentElement.style.cssText = cssText;
-            document.getElementsByClassName('card-bg')[0].style.cssText = mediaCssText;
-        } else {
-            themeIcon.classList.remove('Card-sun');
-            themeIcon.classList.add('Card-moon');
-            imgList = document.getElementsByTagName('img');
-            for (let i = 0; i < imgList.length; i++) {
-                imgList[i].style.cssText = '';
-            }
-            document.documentElement.style.cssText = '';
-            document.getElementsByClassName('card-bg')[0].style.cssText = '';
-        }
         App.clearLog();
         App.outputlog();
         var logo = '%c💤ITJoker\'%cBlog';

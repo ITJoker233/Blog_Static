@@ -1,4 +1,4 @@
-cssText = 'filter: invert(80%) sepia(30%) !important; background-image: url();';
+cssText = 'filter: invert(80%) sepia(30%) !important;';
 mediaCssText = 'filter: invert(1) !important;';
 
 function CreateElementForExecCommand(textToClipboard) {
