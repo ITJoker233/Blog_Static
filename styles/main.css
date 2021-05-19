@@ -75,6 +75,7 @@
 #usercard .lite-item .card-info img {
   position: relative;
   width: 100px;
+  height: 100px;
   max-width: 100%;
   border-radius: 50%;
   border: 3px solid #f3f3f3;
