@@ -1,3 +1,6 @@
+cssText = 'filter: invert(80%) sepia(30%) !important; background-image: url();';
+mediaCssText = 'filter: invert(1) !important;';
+
 function CreateElementForExecCommand(textToClipboard) {
     var forExecElement = document.createElement("div");
     forExecElement.style.position = "absolute";
@@ -132,37 +135,25 @@ App = {
         var themeIcon = document.getElementById("themeIcon");
         const currentTheme = window.localStorage.getItem('theme');
         if (currentTheme == 'light') {
-            document.documentElement.style.webkitFilter = 'invert(100) hue-rotate( 180deg )';
-            document.documentElement.style.filter = 'invert(100) hue-rotate( 180deg )';
-            document.documentElement.style.isolation = 'isolate';
-            imgList = document.getElementsByTagName('img');
-            for (let i = 0; i < imgList.length; i++) {
-                imgList[i].style.webkitFilter = 'invert(100) hue-rotate( 180deg )';
-                imgList[i].style.filter = 'invert(100) hue-rotate( 180deg )';
-                imgList[i].style.isolation = 'isolate';
-            }
-            document.getElementsByClassName('card-bg')[0].style.webkitFilter = 'invert(100) hue-rotate( 180deg )';
-            document.getElementsByClassName('card-bg')[0].filter = 'invert(100) hue-rotate( 180deg )';
-            document.getElementsByClassName('card-bg')[0].isolation = 'isolate';
             themeIcon.classList.remove('Card-moon');
             themeIcon.classList.add('Card-sun');
             window.localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.style.webkitFilter = '';
-            document.documentElement.style.filter = '';
-            document.documentElement.style.isolation = '';
             imgList = document.getElementsByTagName('img');
             for (let i = 0; i < imgList.length; i++) {
-                imgList[i].style.webkitFilter = '';
-                imgList[i].style.filter = '';
-                imgList[i].style.isolation = '';
+                imgList[i].style.cssText = mediaCssText;
             }
-            document.getElementsByClassName('card-bg')[0].style.webkitFilter = '';
-            document.getElementsByClassName('card-bg')[0].filter = '';
-            document.getElementsByClassName('card-bg')[0].isolation = '';
+            document.documentElement.style.cssText = cssText;
+            document.getElementsByClassName('card-bg')[0].style.cssText = mediaCssText;
+        } else {
             themeIcon.classList.remove('Card-sun');
             themeIcon.classList.add('Card-moon');
             window.localStorage.setItem('theme', 'light');
+            imgList = document.getElementsByTagName('img');
+            for (let i = 0; i < imgList.length; i++) {
+                imgList[i].style.cssText = '';
+            }
+            document.documentElement.style.cssText = '';
+            document.getElementsByClassName('card-bg')[0].style.cssText = '';
         }
         /*if (currentTheme == 'light') {
             document.getElementsByTagName('html')[0].classList.add('theme-dark');
