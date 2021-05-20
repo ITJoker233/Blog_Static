@@ -155,18 +155,6 @@ App = {
             document.documentElement.style.cssText = '';
             document.getElementsByClassName('card-bg')[0].style.cssText = '';
         }
-        /*if (currentTheme == 'light') {
-            document.getElementsByTagName('html')[0].classList.add('theme-dark');
-            themeIcon.classList.remove('Card-moon');
-            themeIcon.classList.add('Card-sun');
-            window.localStorage.setItem('theme', 'dark');
-        } else {
-            document.getElementsByTagName('html')[0].classList.remove('theme-dark');
-            themeIcon.classList.remove('Card-sun');
-            themeIcon.classList.add('Card-moon');
-            window.localStorage.setItem('theme', 'light');
-        }*/
-        //location.reload();
     }
 }
 App.mouseEvent();
